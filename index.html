@@ -58,9 +58,9 @@
 <p><label for="f-msg">Your feedback (required)</label><br><textarea id="f-msg" name="message" rows="7" required></textarea></p>
 <input type="hidden" name="_subject" value="SuperOver website feedback">
 <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://superover-ci.github.io/thanks.html">
 <p style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></p>
 <p><button type="submit" class="btn">Send feedback</button></p>
-<p id="fb-status" role="status" aria-live="polite" tabindex="-1"></p>
 </form></section>
 
 <section aria-labelledby="h-contact"><h2 id="h-contact">Contact Us</h2>
@@ -69,16 +69,5 @@
 <p>SuperOver works offline and does not collect or share your data. Read the full <a href="https://docs.google.com/document/d/1Z12iLFAm78wzXtnMt3QQaPAsbjsFUPIUUd7khFspE_8/edit">privacy policy</a> (opens in a new page, in Hindi and English).</p></section>
 </main>
 <footer><p>Planned by Digital Site Foundation.</p></footer>
-<script>
-(function(){var f=document.getElementById('fb'),s=document.getElementById('fb-status');
-f.addEventListener('submit',function(e){e.preventDefault();
-if(f._honey&&f._honey.value)return;
-s.textContent='Sending your feedback...';
-var d=new FormData(f);
-fetch(f.action.replace('formsubmit.co/','formsubmit.co/ajax/'),{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){return r.json()}).then(function(j){
-if(j.success===true||j.success==='true'){f.reset();s.textContent='Thank you. Your feedback was sent.';}
-else{s.textContent='Sorry, the feedback could not be sent. Please try again in a little while, or message us on WhatsApp.';}
-s.focus();}).catch(function(){s.textContent='Sorry, the feedback could not be sent. Please try again in a little while, or message us on WhatsApp.';s.focus();});});})();
-</script>
+
 </body></html>

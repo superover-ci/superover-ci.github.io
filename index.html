@@ -49,7 +49,7 @@
 
 <section aria-labelledby="h-feedback"><h2 id="h-feedback">Send feedback</h2>
 <p>Tell us what worked, what broke, or what you would like to see. Your message goes straight to our inbox. Fields marked required must be filled in.</p>
-<form id="fb" method="POST" action="https://formsubmit.co/283bf0cb7538948281274f648a918632">
+<form id="fb" method="POST" action="https://formsubmit.co/fb8377002f305ac1c2330c02b29348b3">
 <p><label for="f-name">Your name (optional)</label><br><input id="f-name" name="name" type="text" autocomplete="name"></p>
 <p><label for="f-email">Your email, so we can reply (optional)</label><br><input id="f-email" name="email" type="email" autocomplete="email"></p>
 <p><label for="f-type">What is this about? (required)</label><br>
@@ -78,7 +78,7 @@ var d=new FormData(f);
 fetch(f.action.replace('formsubmit.co/','formsubmit.co/ajax/'),{method:'POST',body:d,headers:{'Accept':'application/json'}})
 .then(function(r){return r.json()}).then(function(j){
 if(j.success===true||j.success==='true'){f.reset();s.textContent='Thank you. Your feedback was sent.';}
-else{s.textContent='Sorry, the feedback could not be sent. Please email us instead.';}
-s.focus();}).catch(function(){s.textContent='Sorry, the feedback could not be sent. Please email us instead.';s.focus();});});})();
+else{s.textContent='Sorry, the feedback could not be sent. Please try again in a little while, or message us on WhatsApp.';}
+s.focus();}).catch(function(){s.textContent='Sorry, the feedback could not be sent. Please try again in a little while, or message us on WhatsApp.';s.focus();});});})();
 </script>
 </body></html>

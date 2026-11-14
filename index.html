@@ -8,7 +8,7 @@
 <a class="skip" href="#main">Skip to main content</a>
 <header><p class="brand">SuperOver</p>
 <nav aria-label="Main">
-<ul><li><a href="#about">About</a></li><li><a href="#whats-new">What’s New</a></li><li><a href="#contact">Contact Us</a></li><li><a href="#privacy">Privacy</a></li></ul></nav></header>
+<ul><li><a href="#about">About</a></li><li><a href="#whats-new">What’s New</a></li><li><a href="#feedback">Feedback</a></li><li><a href="#contact">Contact Us</a></li><li><a href="#privacy">Privacy</a></li></ul></nav></header>
 <main id="main">
 <h1>SuperOver: a cricket game you play with your ears</h1>
 <p class="lead">SuperOver is an Android cricket game built for blind and visually impaired players. It works offline, speaks everything it does, and is played with simple swipes.</p>
@@ -47,12 +47,38 @@
 <p>Next up: more bug fixes, more deliveries such as the short ball and full toss, and practice modes.</p></section>
 
 
+<section aria-labelledby="h-feedback"><h2 id="h-feedback">Send feedback</h2>
+<p>Tell us what worked, what broke, or what you would like to see. Your message goes straight to our inbox. Fields marked required must be filled in.</p>
+<form id="fb" method="POST" action="https://formsubmit.co/283bf0cb7538948281274f648a918632">
+<p><label for="f-name">Your name (optional)</label><br><input id="f-name" name="name" type="text" autocomplete="name"></p>
+<p><label for="f-email">Your email, so we can reply (optional)</label><br><input id="f-email" name="email" type="email" autocomplete="email"></p>
+<p><label for="f-type">What is this about? (required)</label><br>
+<select id="f-type" name="topic" required><option value="Bug or problem">Bug or problem</option><option value="Suggestion">Suggestion</option><option value="Commentary or sounds">Commentary or sounds</option><option value="Accessibility">Accessibility</option><option value="Something else">Something else</option></select></p>
+<p><label for="f-device">Phone model and Android version (optional)</label><br><input id="f-device" name="device" type="text"></p>
+<p><label for="f-msg">Your feedback (required)</label><br><textarea id="f-msg" name="message" rows="7" required></textarea></p>
+<input type="hidden" name="_subject" value="SuperOver website feedback">
+<input type="hidden" name="_captcha" value="false">
+<p style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></p>
+<p><button type="submit" class="btn">Send feedback</button></p>
+<p id="fb-status" role="status" aria-live="polite" tabindex="-1"></p>
+</form></section>
 
 <section aria-labelledby="h-contact"><h2 id="h-contact">Contact Us</h2>
-<ul><li><a href="https://wa.me/916289865309">Chat with us on WhatsApp</a> (opens WhatsApp)</li></ul></section>
+<ul><li><a href="#feedback">Send us feedback with the form above</a></li><li><a href="https://wa.me/916289865309">Chat with us on WhatsApp</a> (opens WhatsApp)</li></ul></section>
 <section id="privacy" aria-labelledby="h-priv"><h2 id="h-priv">Privacy</h2>
 <p>SuperOver works offline and does not collect or share your data. Read the full <a href="https://docs.google.com/document/d/1Z12iLFAm78wzXtnMt3QQaPAsbjsFUPIUUd7khFspE_8/edit">privacy policy</a> (opens in a new page, in Hindi and English).</p></section>
 </main>
 <footer><p>Planned by Digital Site Foundation.</p></footer>
-
+<script>
+(function(){var f=document.getElementById('fb'),s=document.getElementById('fb-status');
+f.addEventListener('submit',function(e){e.preventDefault();
+if(f._honey&&f._honey.value)return;
+s.textContent='Sending your feedback...';
+var d=new FormData(f);
+fetch(f.action.replace('formsubmit.co/','formsubmit.co/ajax/'),{method:'POST',body:d,headers:{'Accept':'application/json'}})
+.then(function(r){return r.json()}).then(function(j){
+if(j.success===true||j.success==='true'){f.reset();s.textContent='Thank you. Your feedback was sent.';}
+else{s.textContent='Sorry, the feedback could not be sent. Please email us instead.';}
+s.focus();}).catch(function(){s.textContent='Sorry, the feedback could not be sent. Please email us instead.';s.focus();});});})();
+</script>
 </body></html>

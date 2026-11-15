@@ -163,6 +163,16 @@ a:hover { text-decoration-thickness: 3px; }
 /* Forms */
 .form { max-width: 34rem; }
 label { font-weight: 600; }
+input[type="checkbox"], input[type="radio"] {
+  width: auto;
+  min-width: 1.2rem;
+  min-height: 1.2rem;
+  margin: 0 0.5rem 0 0;
+  vertical-align: middle;
+}
+.form .check-row { display: flex; align-items: flex-start; gap: 0.4rem; }
+.form .check-row label { font-weight: 600; }
+
 input, select, textarea {
   font: inherit;
   width: 100%;

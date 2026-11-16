@@ -45,8 +45,8 @@
   <p><label for="b-email">Your email (required)</label><br>
   <input id="b-email" name="email" type="email" autocomplete="email" required></p>
 
-  <p><label for="b-whatsapp">Your WhatsApp number (optional)</label><br>
-  <input id="b-whatsapp" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel"></p>
+  <p><label for="b-whatsapp">Your WhatsApp number (required)</label><br>
+  <input id="b-whatsapp" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" required></p>
 
   <p><label for="b-device">Your Android phone model and version (required, for example: Pixel 6, Android 14)</label><br>
   <input id="b-device" name="device" type="text" required></p>
@@ -59,24 +59,25 @@
     <option value="No">No</option>
   </select></p>
 
-  <p><label for="b-vision">Your vision level (optional)</label><br>
-  <select id="b-vision" name="vision_level">
-    <option value="">Prefer not to say</option>
+  <p><label for="b-vision">Your vision level (required)</label><br>
+  <select id="b-vision" name="vision_level" required>
+    <option value="">Choose one</option>
+    <option value="Prefer not to say">Prefer not to say</option>
     <option value="Totally blind">Totally blind</option>
     <option value="Some useful vision">Some useful vision</option>
     <option value="Fully sighted">Fully sighted</option>
   </select></p>
 
-  <p><label for="b-cricket">Have you played cricket games before? (optional)</label><br>
-  <select id="b-cricket" name="cricket_game_experience">
+  <p><label for="b-cricket">Have you played cricket games before? (required)</label><br>
+  <select id="b-cricket" name="cricket_game_experience" required>
     <option value="">Choose one</option>
     <option value="Often">Yes, often</option>
     <option value="A little">Yes, a little</option>
     <option value="No">No, never</option>
   </select></p>
 
-  <p><label for="b-hours">How many hours a week could you test? (optional)</label><br>
-  <select id="b-hours" name="testing_hours_per_week">
+  <p><label for="b-hours">How many hours a week could you test? (required)</label><br>
+  <select id="b-hours" name="testing_hours_per_week" required>
     <option value="">Choose one</option>
     <option value="Under 1 hour">Under 1 hour</option>
     <option value="1 to 3 hours">1 to 3 hours</option>
